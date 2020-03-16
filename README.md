@@ -1,7 +1,7 @@
 # Create-Labels-for-Thin-Sections
-Create Labels for image-segmentation:
+Create Labels for Keras image-segmentation:
 
-This is meant to document the steps being used to create a labeled image for the image segmentation using Keras per Divam Gupta's GitHub repository. 
+This is meant to document the steps being used to create a labeled image that will be used for the training for the image segmentation process using Keras per Divam Gupta's GitHub repository. 
 
 We are trying to label different types of grains or blue dye epoxy (this represents visual porosity) observed in clastic petrographic thin sections. The following image is an example of a typical clastic thin section that we are working with for our test data:
 
@@ -23,7 +23,7 @@ The following is an example of the gray-level image and histogram of these data 
 
 ![Image](GradientThinSection.png)
 
-We then partition the gray-level image data into different bins which will serve as our labels:
+We then partition the gray-level image data into different bins which will serve as our annotated image labels:
 
  
     label = np.zeros(gradient.shape )
@@ -35,11 +35,11 @@ We then partition the gray-level image data into different bins which will serve
     label[gradient > 0.8]  = 5 #bright grains - Yellow   
 
 
-We are scaling our label data from 1 to 5 to represent the segments in the image that will be used as annotated labels for our image segmentation training. 
+We are labeling our data from 1 to 5 to represent the key segments observed in the image. These labeled images will be used as the annotated images for our image segmentation training. 
 
 
 ![Image](LabelThinSection.png)
 
-The histogram verifies that we have 5 labels in our saved images.
+The above histogram verifies that we have labeled 5 different segments or objects in our image.
 
 
