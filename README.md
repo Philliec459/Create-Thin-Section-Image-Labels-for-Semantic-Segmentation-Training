@@ -44,11 +44,9 @@ These labeled images will then be used as the annotated labels for our image seg
 
 The histogram verifies that we have 5 labels in our saved label images.
 
-There is another python program that should be driven from the xterm command line:
+There is another python program that should be driven from the xterm command line "python interactive_plot" as the command.
 
->> python interactive_plot
-
-to interactively display the pixel values of one of the label images to ensure that the label cutoffs for segmentation are optimized for the threshold values and the different labeled segments are well understood.
+This program will create an interactive display of the 3.png image to display the pixel values of the labeled image. This tool can be used to optimize the label cutoffs used in thresholding of the different labeled segments and make sure that these segments are well understood.
 
 ![Image](Interactive.png) 
 
