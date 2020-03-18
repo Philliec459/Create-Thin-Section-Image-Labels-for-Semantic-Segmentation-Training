@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import cv2
 from PIL import Image, ImageOps 
 import os.path
-from skimage.color import rgb2gray,gray2rgb
+from skimage.color import rgb2gray, gray2rgb
 from skimage.filters import sobel,gaussian,hessian,frangi,laplace,median
 #meijering, prewitt, prewitt_h, prewitt_v, sato
 from skimage.io import imsave
@@ -20,14 +20,14 @@ from skimage.io import imsave
 # Drive this from terminal window
 # =============================================================================
 '''
-img_label = cv2.imread('3.png')
+img_label = cv2.imread("3.png")
 #img = Image.open('sample_images/1_output.png')
 
-data = np.array(img_label) 
+data_original = np.array(img_label) 
 
 #data = np.around(rgb2gray(data_original)*100) #averagint
 #data =np.around(gaussian(rgb2gray(data_original)*100)) #averagint
-#data =np.around(median(rgb2gray(data_original)*1)) #averagint
+data =np.around(median(rgb2gray(data_original))) #averagint
 
 #import mpldatacursor
 from mpldatacursor import datacursor

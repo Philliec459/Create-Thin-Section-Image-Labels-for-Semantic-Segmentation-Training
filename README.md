@@ -29,22 +29,20 @@ We then partition the gray-level image data into different bins which will serve
     label = np.zeros(gradient.shape )
 
     label[gradient < 0.25] = 1 #black grains 
-    label[gradient > 0.25] = 50 #darker grains
-    label[gradient > 0.4]  = 100 #blue-dye epoxy or visual porosity  
-    label[gradient > 0.6]  = 180 #darker grains 
-    label[gradient > 0.75]  = 200 #bright quartz grains   
+    label[gradient > 0.25] = 2 #darker grains
+    label[gradient > 0.4]  = 3 #blue-dye epoxy or visual porosity  
+    label[gradient > 0.6]  = 4 #darker grains 
+    label[gradient > 0.75] = 5 #bright quartz grains   
 
 
 
-We are scaling our label data from 0 to 255 to create 5 labels that represent the various segments in the image. We use the python program "review_images_Create_Labels_1-255.py" to create these labels scaled from 0 to 255. We could also use "review_images_Create_Labels.py" to scale the label images from 0 to 1. The immediate value in scaling the labeled images from 1-255 is that the labeled images can be viewed with a common image viewer. However, I am not sure what is best for image segmentation in having labels scaled from 1-5 or 1-200??? 
-
-These labeled images will then be used as the annotated labels for our image segmentation training. 
+Per the advice of Divam Gupta we are scaling our label images from 0 to n_classes to create the 5 labels that represent the various segments in our Thin Section images. We use the python program "review_images_Create_Labels_n_classes.py" to create these labels scaled from 0 to n_classes. These are the type of labeled images that will were used as the annotated labels for our image segmentation training. 
 
 ![Image](LabelThinSection.png)
 
 The histogram verifies that we have 5 labels in our saved label images.
 
-There is another python program that should be driven from the xterm command line "python interactive_plot" as the command.
+There is another python program that should be driven from the xterm command line "python interactive_plot.py" as the command.
 
 This program will create an interactive display of the 3.png image to display the pixel values of the labeled image. This tool can be used to optimize the label cutoffs used in thresholding of the different labeled segments and make sure that these segments are well understood.
 
