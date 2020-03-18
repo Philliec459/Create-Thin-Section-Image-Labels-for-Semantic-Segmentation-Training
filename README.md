@@ -36,15 +36,15 @@ We then partition the gray-level image data into different bins which will serve
 
 
 
-Per the advice of Divam Gupta we are scaling our label images from 0 to n_classes to create the 5 labels that represent the various segments in our Thin Section images. We use the python program "review_images_Create_Labels_n_classes.py" to create these labels scaled from 0 to n_classes. These are the type of labeled images that will were used as the annotated labels for our image segmentation training. 
+Per the advice of Divam Gupta we are scaling our label images from 0 to n_classes to create the 5 labels that represent the various segments in our Thin Section images. We use the python program "review_images_Create_Labels_n_classes.py" to create these labels scaled from 0 to n_classes. These are the type of labeled images that were used for the annotated labels for our image segmentation training data. 
 
 ![Image](LabelThinSection.png)
 
 The histogram verifies that we have 5 labels in our saved label images.
 
-There is another python program that should be driven from the xterm command line "python interactive_plot.py" as the command.
+There is another python program that should be driven from the xterm command line using "python interactive_plot.py" as the command.
 
-This program will create an interactive display of the 3.png image to display the pixel values of the labeled image. This tool can be used to optimize the label cutoffs used in thresholding of the different labeled segments and make sure that these segments are well understood.
+This program will create an interactive display of the 3.png image to display the pixel values of the labeled image. This tool can be used to confirm, optimize the label cutoffs used in segmental thresholding and ensure that these segment values are well understood.
 
 ![Image](Interactive.png) 
 
