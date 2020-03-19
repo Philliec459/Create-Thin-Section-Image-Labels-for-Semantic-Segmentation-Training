@@ -31,7 +31,7 @@ The following is an example of the gray-level image and histogram of these data 
 ![Image](GradientThinSection.png)
 
 
-## Create Labeled Images
+## Partition Gray-Level Image to Create Labeled Images
 We then partition the gray-level image data into different bins which will serve as our labels:
 
  
